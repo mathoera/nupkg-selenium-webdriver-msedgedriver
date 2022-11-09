@@ -14,7 +14,8 @@ curl https://msedgedriver.azureedge.net/%version%/edgedriver_linux64.zip -o .\do
 PowerShell -Command "Expand-Archive -Path .\download\%version%\edgedriver_win32.zip -DestinationPath .\download\%version%\edgedriver_win32"
 PowerShell -Command "Expand-Archive -Path .\download\%version%\edgedriver_win64.zip -DestinationPath .\download\%version%\edgedriver_win64"
 PowerShell -Command "Expand-Archive -Path .\download\%version%\edgedriver_mac64.zip -DestinationPath .\download\%version%\edgedriver_mac64"
-PowerShell -Command "Expand-Archive -Path .\download\%version%\edgedriver_linux64.zip -DestinationPath .\download\%version%\edgedriver_linux64"
+REM ### Linux stopped working 
+REM ### PowerShell -Command "Expand-Archive -Path .\download\%version%\edgedriver_linux64.zip -DestinationPath .\download\%version%\edgedriver_linux64"
 
 if [%~2]==[] PowerShell -Command "(Get-Content -path Selenium.WebDriver.MSEdgeDriver.template.nuspec -Raw) -replace '_version_','%version%'" > %nugetFile%
 if [%~2]==[pre] PowerShell -Command "(Get-Content -path Selenium.WebDriver.MSEdgeDriver.template-pre.nuspec -Raw) -replace '_version_','%version%'" > %nugetFile%
